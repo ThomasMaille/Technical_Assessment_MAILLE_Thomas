@@ -19,3 +19,21 @@ function GetClients(){
     return $clients;
 }
 
+
+function findGarage($id, $client){
+    global $garages;
+    if($id > sizeof($garages)){
+        return "Ce garage n'est pas dans la liste";
+    }
+
+    foreach($garages as $gar){
+        if($gar['id']===$id){
+            if($gar["customer"]===$client){
+                return $gar["title"];
+            }
+            else{
+                return "Ce garage n'est pas dans votre liste de garage";
+            }
+        }
+    }
+}
