@@ -22,4 +22,10 @@ $(document).ready(function(){
             loadClientData(client);
         }
     });
+
+    $(document).on('click', '.car-item',function(){
+        console.log('ICI');
+        var carId = $(this).data('id');
+        $("#resultat").load("edit.php", {carId : carId});
+    });
 });

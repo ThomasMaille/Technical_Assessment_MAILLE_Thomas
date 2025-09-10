@@ -10,7 +10,7 @@ $garages = json_decode(file_get_contents('../../../../data/garages.json'), true)
 
 foreach($cars as $car){
     if($car["customer"] === 'clientb'){
-        echo "<li>";
+        echo "<li class='car-item' data-id='{$car["id"]}'>";
         echo "<strong>" . strtolower($car["modelName"]) . "</strong> - " . $car["brand"];
         echo " | Garage : " . findGarage($car["garageId"], 'clientb');
         echo "</li>";
