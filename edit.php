@@ -28,3 +28,6 @@ echo "<strong> Garage : </strong>" . findGarage($carToLoad["garageId"], $carToLo
 echo "</li> <li>";
 echo "<strong> Propriétaire : </strong>" . $carToLoad["customer"];
 echo "</li>";
+echo "<br>";
+echo "<button type='button' class='btn btn-outline-dark btn-sm car-view' data-client='{$carToLoad['customer']}'>
+        <i class='bi bi-arrow-left'></i> Liste des voitures </button>";

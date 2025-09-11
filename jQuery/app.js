@@ -24,8 +24,12 @@ $(document).ready(function(){
     });
 
     $(document).on('click', '.car-item',function(){
-        console.log('ICI');
         var carId = $(this).data('id');
         $("#resultat").load("edit.php", {carId : carId});
     });
+
+    $(document).on('click', '.car-view',function(){
+        var client = $(this).data('client');
+        loadClientData(client);
+    })
 });
