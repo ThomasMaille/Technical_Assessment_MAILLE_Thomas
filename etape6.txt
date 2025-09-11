@@ -1,0 +1,41 @@
+Etape 6 : Sécuriser les données 
+
+Voici les problèmes de sécurité que j'ai pu relever et qui me semblent importants à traiter si on veut pousser le projet plus loin.
+
+
+L’utilisation des cookies comme moyen d’authentification pose un vrai problème de sécurité : quelqu’un pourrait les voler ou les modifier pour accéder aux données d’un 
+autre utilisateur. Pour limiter ce risque, il faut utiliser les flags HttpOnly et Secure, régénérer régulièrement l’ID de session et limiter la durée de vie des cookies.
+Si le projet devait évoluer, il faudrait mettre en place un système de login avec mot de passe, et stocker toutes les données sensibles en base de données. Les infos qui 
+doivent rester privées pour le client — comme les mots de passe ou éventuellement les données bancaires — doivent être chiffrées (avec password_hash() ou d’autres fonctions
+PHP) pour ne pas apparaître en clair.
+
+Stocker les données en base de données implique aussi de se protéger contre les injections SQL : il faut toujours utiliser des requêtes préparées pour éviter qu’un 
+utilisateur ne puisse injecter du code malveillant dans les requêtes.
+
+Les échanges entre le client et le serveur doivent être sécurisés : si les données transitent en clair, elles peuvent être interceptées. Il est donc indispensable 
+d’utiliser HTTPS (qui chiffre les données) pour toutes les communications.
+
+Enfin, tout ce qui est affiché côté client peut être manipulé par un utilisateur malintentionné, ce qui peut provoquer des failles XSS ou un affichage falsifié. 
+Pour éviter ça, il faut filtrer et encoder correctement les données côté serveur, par exemple avec htmlspecialchars() en PHP.
+
+
+
+| Problème identifié                    | Risque                                             | Solution proposée                                                        |
+| ------------------------------------- | -------------------------------------------------- | -------------------------------------------------------------------------|
+| Accès non authentifié                 | Tout utilisateur peut voir les données des clients | Implémenter un système de login/mot de passe avec rôles et vérification  |
+|                                       |                                                    | côté serveur                                                             |
+|                                       |                                                    |                                                                          |
+| Modification non autorisée            | Données modifiées ou corrompues                    | Utiliser une base de données avec droits d’accès, valider et filtrer     |
+|                                       |                                                    | toutes les entrées POST/GET                                              |
+|                                       |                                                    |                                                                          |
+| Injections SQL / manipulation serveur | Exécution de commandes malveillantes               | Requêtes préparées, ORM, validation des entrées                          |
+|                                       |                                                    |                                                                          |
+| Fuite de données sensibles            | Données clients exposées                           | Chiffrement des informations sensibles, HTTPS obligatoire                |
+|                                       |                                                    |                                                                          |
+| Cookies et sessions non sécurisés     | Vol ou modification du cookie client               | Cookies `HttpOnly` et `Secure`, régénération d’ID de session, durée      |
+|                                       |                                                    | limitée                                                                  |
+|                                       |                                                    |                                                                          |
+| Données transmises en clair           | Interception des données                           | Forcer l’usage de HTTPS pour toutes les communications                   |
+|                                       |                                                    |                                                                          |
+| Contenu côté client manipulable       | XSS ou affichage falsifié                          | Filtrage et encodage côté serveur (`htmlspecialchars`)                   |
+
