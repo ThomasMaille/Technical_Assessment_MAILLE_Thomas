@@ -118,5 +118,25 @@
       "customer": "clientb",
       "garageId": 2,
       "colorHex": "#FF00FF"
+    },
+    {
+      "id": 21,
+      "modelName": "Coupe X",
+      "year": 1262304000,
+      "brand": "Brand Y",
+      "power": 180,
+      "customer": "clienta",
+      "garageId": 1,
+      "colorHex": "#FF4500"
+    },
+    {
+      "id": 22,
+      "modelName": "SUV Z",
+      "year": 1704067200,
+      "brand": "Brand Z",
+      "power": 250,
+      "customer": "clienta",
+      "garageId": 3,
+      "colorHex": "#4682B4"
     }
 ]
