@@ -28,5 +28,17 @@
         "title": "Speedy Auto Repair",
         "address": "654 Cedar Lane, City E",
         "customer": "clientc"
+    },
+    {
+      "id": 6,
+      "title": "AutoPlus Garage",
+      "address": "123 Main Street, City A",
+      "customer": "clientb"
+    },
+    {
+      "id": 7,
+      "title": "SpeedWorks",
+      "address": "32 Lincoln Avenue, City B",
+      "customer": "clientb"
     }
 ]
