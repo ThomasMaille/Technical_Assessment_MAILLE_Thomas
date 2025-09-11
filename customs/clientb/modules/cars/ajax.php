@@ -3,6 +3,7 @@ require_once('../../../../functions.php');
 ?>
 <h1>Voitures Client B</h1>
 
+<button class='btn btn-outline-secondary garage-view' data-client='clientb'> Liste des garages </button>
 <?php
 
 $cars = json_decode(file_get_contents('../../../../data/cars.json'), true);
