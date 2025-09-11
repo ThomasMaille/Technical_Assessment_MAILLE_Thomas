@@ -2,7 +2,7 @@
 
 require_once('functions.php');
 
-# INITIALISATION DU COOKIE DU CLIENT
+# Initialisation du cookie client
 
 $clients = GetClients();
 

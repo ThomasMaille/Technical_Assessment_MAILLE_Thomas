@@ -19,7 +19,7 @@ function GetClients(){
     return $clients;
 }
 
-
+# Fonction qui renvoie le nom du garage correspondant à l'id envoyé
 function findGarage($id, $client){
     global $garages;
     if($id > sizeof($garages)){

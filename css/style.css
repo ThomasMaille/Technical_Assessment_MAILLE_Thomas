@@ -1,0 +1,34 @@
+body {
+    background: #f0f2f5;
+}
+.dynamic-div h5 {
+    color: #555;
+}
+.client-select {
+    min-width: 200px;
+}
+.card {
+    border-radius: 15px;
+}
+.header-title {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.dynamic-div ul {
+    list-style: none;
+    padding-left: 0;
+}
+.dynamic-div li {
+    padding: 8px 12px;
+    margin-bottom: 6px;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+.dynamic-div li.car-item {
+    cursor: pointer;
+}
+.dynamic-div li.car-item:hover {
+    background-color: #f8f9fa;
+}
+.text-muted {
+    font-style: italic;
+}
