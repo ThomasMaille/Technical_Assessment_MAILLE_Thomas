@@ -1,0 +1,12 @@
+{
+    "name": "thomaille/tool4staffingtest",
+    "description": "project",
+    "type": "project",
+    "authors": [
+        {
+            "name": "ThomasMaille",
+            "email": "thomas.maille13@gmail.com"
+        }
+    ],
+    "require": {}
+}
